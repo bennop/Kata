@@ -12,19 +12,19 @@ def read_json_dictionary(jfile):
 cod2prot = read_json_dictionary('codons.json')
 prot2p1 = read_json_dictionary('peptides.json')
 
-def antisense(seq):
-  translate = {"A":"T", "C":"G", "G":"C", "T":"A"}
+def reverse_and_translate(seq, dict):
+  # add common part of dictionary
+  dict.update({"C":"G", "G":"C", "T":"A"})
   rev = seq[::-1]
-  return ''.join([translate[letter] for letter in rev ])
-  # [k, v for k, v in translate]
+  return ''.join([dict[letter] for letter in rev ])
+
+def antisense(seq):
+  return reverse_and_translate(seq, {"A":"T"})
 
 def translate_to_rna(seq):
-  translate = {"A":"U", "C":"G", "G":"C", "T":"A"}
-  rev = seq[::-1]
-  return ''.join([translate[letter] for letter in rev ])
-  # [k, v for k, v in translate]
+  return reverse_and_translate(seq, {"A":"U"})
 
-def all_rna(seq):
+Def all_rna(seq):
   return [translate_to_rna(seq), translate_to_rna(antisense(seq))]
 
 def codon_to_prot3(codon):
