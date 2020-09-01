@@ -43,3 +43,7 @@ Below are the specifications in written form.  For a diagram, see the picture **
     g. *Example Translation from RNA*: ggaugcccaaauaa -> [Met, Pro, Arg] == MPK
 
 Try it out using this [online tool](https://web.expasy.org/translate/) and type in the following sequence: **ttatttgggcatcc** and press the "Translate" button, and look for the protein sequence highlighted in red.
+
+### Schematic Overview
+
+![](file://dna_kata_explanation.png)
