@@ -45,4 +45,4 @@ Try it out using this [online tool](https://web.expasy.org/translate/) and type 
 
 ### Schematic Overview
 
-![](https://github.com/bennop/Kata/blob/master/20200901/dna_kata_explanation.png)
+![](./dna_kata_explanation.png)
