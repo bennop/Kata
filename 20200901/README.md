@@ -46,4 +46,4 @@ Try it out using this [online tool](https://web.expasy.org/translate/) and type 
 
 ### Schematic Overview
 
-![](file://dna_kata_explanation.png)
+see: dna_kata_explanation.png in this repository
