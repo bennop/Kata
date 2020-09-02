@@ -29,8 +29,7 @@ def transcribe_to_rna(seq):
   return reverse_and_translate(seq, {"A":"U"})
 
 def all_rna(seq):
-  return [transcribe_to_rna(seq),
-          transcribe_to_rna(antisense(seq))]
+  return [transcribe_to_rna(s) for s in [seq, antisense(seq)]]
 
 # partial translations
 def codon_to_prot3(codon):
