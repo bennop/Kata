@@ -12,6 +12,10 @@ def read_json_dictionary(jfile):
 cod2prot = read_json_dictionary('codons.json')
 prot2p1 = read_json_dictionary('peptides.json')
 
+
+# common code for
+#  - antisense conversion
+#  - RNA transcription
 def reverse_and_translate(seq, dict):
   # add common part of dictionary
   dict.update({"C":"G", "G":"C", "T":"A"})
@@ -21,12 +25,14 @@ def reverse_and_translate(seq, dict):
 def antisense(seq):
   return reverse_and_translate(seq, {"A":"T"})
 
-def translate_to_rna(seq):
+def transcribe_to_rna(seq):
   return reverse_and_translate(seq, {"A":"U"})
 
-Def all_rna(seq):
-  return [translate_to_rna(seq), translate_to_rna(antisense(seq))]
+def all_rna(seq):
+  return [transcribe_to_rna(seq),
+          transcribe_to_rna(antisense(seq))]
 
+# partial translations
 def codon_to_prot3(codon):
    return cod2prot[codon]
 
@@ -36,9 +42,11 @@ def prot3_to_prot1(p3):
   else: 
     return prot2p1[p3.lower()]
 
+# combined translation
 def codon_to_prot(codon):
   return prot3_to_prot1(codon_to_prot3(codon))
 
+# translate one sequence
 def translation(seq):
   start_pos = str.index(seq, "AUG")
   if start_pos == -1:
@@ -50,17 +58,18 @@ def translation(seq):
       return peptide
     peptide += protein
   return peptide
-    
+
+# translate sequence and it's reverse transposed
 def translate_all(seq):
   return [translation(s) for s in all_rna(seq)]
 
-# ---- T E S T S ------------
+# -------  T E S T S  ------------
 
 def test_antisense():
   assert antisense("TTAGGGCATG") ==  "CATGCCCTAA"
 
-def test_translate_to_rna():
-  assert translate_to_rna("TTAGGGCATG") == 'CAUGCCCUAA'
+def test_transcribe_to_rna():
+  assert transcribe_to_rna("TTAGGGCATG") == 'CAUGCCCUAA'
   
 def test_all_rna():
   assert all_rna("TTAGGGCATG") == ['CAUGCCCUAA','UUAGGGCAUG']
