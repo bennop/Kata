@@ -36,7 +36,7 @@ def codon_to_prot3(codon):
    return cod2prot[codon]
 
 def prot3_to_prot1(p3):
-  if(p3 == 'Stop'):
+  if(p3 == 'Stop'):             # special handling of STOP codons
     return '-'
   else: 
     return prot2p1[p3.lower()]
@@ -47,16 +47,19 @@ def codon_to_prot(codon):
 
 # translate one sequence
 def translation(seq):
-  start_pos = str.index(seq, "AUG")
+  start_seq = "AUG"             # prior knowledge
+  start_pos = str.index(seq, start_seq)
   if start_pos == -1:
     return False
-  peptide = 'M'
-  for codon_pos in range(start_pos+3, len(seq)-2, 3):
+  peptide = codon_to_prot(start_seq)
+  for codon_pos in range(start_pos+3,    # codon after found start
+                         len(seq)-2,     # last possible codon pos
+                         3):             # in steps of 3
     protein = codon_to_prot(seq[codon_pos:codon_pos+3])
-    if protein == '-':
+    if protein == '-':          # STOP
       return peptide
     peptide += protein
-  return peptide
+  return peptide                # rather fail? (see Specification 3e)
 
 # translate sequence and it's reverse transposed
 def translate_all(seq):
