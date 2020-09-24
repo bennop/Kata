@@ -51,7 +51,7 @@ in alphabetical order
 
 Two strategies for the subsequent relay steps 
 
-1. *copy* (used for `bash` and `python`)
+1. *copy* (used for `bash` and `python` (1st version))
     - input file to output 
     - parse for `lines so far`
     - append self-related info to output
