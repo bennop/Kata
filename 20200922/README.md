@@ -51,26 +51,38 @@ Even that option is not (yet?) directly supported on `repl.it` and was implement
 
 Two strategies for the subsequent relay steps 
 
-1. *copy* 
+1. *copy* (used for `bash` and `python`)
     - input file to output 
     - parse for `lines so far`
     - append self-related info to output
-2. *load* 
+2. *load* (used for `R` and `python` (2nd version))
     - input file
     - augment with self-related info after parsing for `lines so far`
     - write combined info to output
+    
+#### Line Count
+Initially hard-code the number of lines (see Outlook below for improvement)
 
 ### Realisation
 Use unfamiliar language for simple task (initial step, first file): `Java` and `Julia`.
 
-### Extension
+### Extension / Outlook
 For fun: 
 
 - add flexibility
     - handle any step (`bash`, `R`)
-        - indicate via parameter
+        - indicate via parameter (or automatically continue on highest output found?)
         - default to original sequence
     - fault tolerance (`R`)
         - start over when input file not accessible
+- add introspection (detect line count for current script) where feasible
+    - No(t yet)
+        - `Java`, `Julia`
+    - Partly
+        - `R`
+    - done
+        - `bash`, `python`
 - Workflow ideas for *Git setup* (all scripts in same directory)
-    - `makefile` (not yet)
+    - `makefile` (started)
+        - [x] clean: remove all output files
+        
