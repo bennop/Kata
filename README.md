@@ -1,4 +1,3 @@
 # Katas
 
-Kata code from the Munich Social Coding Dojo Meetup
-
+Kata code from selected [Munich Social Coding Dojo Meetups](https://www.meetup.com/Munchen-Social-Coding-Dojo)
