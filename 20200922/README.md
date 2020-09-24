@@ -72,5 +72,5 @@ For fun:
         - default to original sequence
     - fault tolerance (`R`)
         - start over when input file not accessible
-- Workflow ideas for Git setup (all scripts in same directory)
-    - makefile (not yet)
+- Workflow ideas for *Git setup* (all scripts in same directory)
+    - `makefile` (not yet)
