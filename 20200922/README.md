@@ -40,10 +40,10 @@ Options 1 is not available on `repl.it`, option 3 did not work for `R` as advert
 Even that option is not (yet?) directly supported on `repl.it` and was implemented via manual copy from one repl to the next.
 
 #### Language selection
-
+in alphabetical order
 - [`bash`](https://www.gnu.org/software/bash/)
 - [`Java`](https://www.java.com/)
-- [`Julia`](https://julialang.org/)
+- [`Julia`](https://julialang.org/) (after Google hit)
 - [`Python`](https://www.python.org/)
 - [`R`](https://www.r-project.org)
 
