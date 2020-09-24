@@ -2,6 +2,13 @@ step <- 4
 my.name <- "Benno"
 # this may not work on all systems
 
+print(commandArgs(TRUE))
+cat('nframe: ', sys.nframe(),'\n')
+for(i in sys.nframe():0){
+  cat(i, '\n')
+  print(ls(name = sys.frame(i)))
+}
+
 # Introspection - find lines of this script
 this.file <- sys.frame(1)$ofile
 #this.file <- 'main.r' # hard coded

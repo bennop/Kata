@@ -1,3 +1,5 @@
+#!/bin/bash
+
 IN=${1:-1}
 NAME=Arianna
 #------------------
@@ -17,7 +19,7 @@ if [ -f ${INFILE} ] ; then
   n1=`awk '{print $NF}' < $INFILE | tail -1`
 else
   echo file ${INFILE} not found
-  n1=0
+  n1=0                            # no lines so far
   OUTFILE=file1.csv
   if [ -f ${OUTFILE} ] ; then
     echo output file exists - aborting
@@ -27,4 +29,6 @@ fi
 
 # calculate updated line total
 n=$((n1+n2))
+
+# final line of output
 echo "'$NAME', $n2, $n" | tee -a ${OUTFILE}
