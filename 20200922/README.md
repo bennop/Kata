@@ -35,7 +35,7 @@ Passing data between scripts could be done via
 - database
     - new `repl.it` feature
 
-Options 1 is not available on `repl.it`, option 3 did not seem possible across repls -> files, since json may not be easily accessible (bash) -> csv
+Options 1 is not available on `repl.it`, option 3 did not work for `R` as advertised -> files; since **json** may not be easily accessible (bash) -> **csv** which can be handled easily across languages.
 
 Even that option is not (yet?) directly supported on `repl.it` and was implemented via manual copy from one repl to the next.
 
@@ -65,6 +65,10 @@ Initially hard-code the number of lines (see Outlook below for improvement)
 
 ### Realisation
 Use unfamiliar language for simple task (initial step, first file): `Java` and `Julia`.
+
+`bash` was choden for step 2 and it's initial version relied on its input having exactly one line. (generalized now)
+
+`python` and `R` offered sufficient high-level function support that they were selected for the latter steps.
 
 ### Extension / Outlook
 For fun: 
