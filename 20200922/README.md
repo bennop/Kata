@@ -86,7 +86,10 @@ For fun:
         - `R`
     - done
         - `bash`, `python`
-- Workflow ideas for *Git setup* (all scripts in same directory)
+- Workflow ideas for *Git setup* (all scripts in same directory - needs some kind of UNIX)
     - `makefile` (started)
-        - [x] clean: remove all output files
+        - [x] **clean**: remove all output files
+        - [ ] make scripts directly executable
+            - [x] target **executable** to set x-flag
+            - [ ] add exec line at start of script
         
