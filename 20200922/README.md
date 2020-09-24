@@ -9,10 +9,11 @@ Write scripts to either
 - output 
     - a team member's name
     - lines of script
-    - total lines of scripts
+    - total lines of scripts (same as `lines of script` since first and only script)
+    `'Nick', 5, 5`
 - take output of preceding script  and output that appended by the previously defined output
 
-Each script should be in a different programming language. 
+Each script should be in a **different programming language**. 
 
 ## Approach
 ### Considerations
@@ -23,9 +24,12 @@ Passing data between scripts could be done via
 
 - piping
 - files
+    - text (e.g., *.csv)
+    - json
 - database
+    - new `repl.it` feature
 
-Options 1 is not available on `repl.it`, option 3 did not seem possible across repls -> files
+Options 1 is not available on `repl.it`, option 3 did not seem possible across repls -> files, since json may not be easily accessible (bash) -> csv
 
 Even that option is not (yet?) directly supported on `repl.it` and was implemented via manual copy from one repl to the next.
 
@@ -37,6 +41,18 @@ Even that option is not (yet?) directly supported on `repl.it` and was implement
 - [`Python`](https://www.python.org/)
 - [`R`](https://www.r-project.org)
 
+#### Relay processing
+
+Two strategies for the subsequent relay steps 
+
+1. *copy* 
+    - input file to output 
+    - parse for `lines so far`
+    - append self-related info to output
+2. *load* 
+    - input file
+    - augment with self-related info after parsing for `lines so far`
+    - write combined info to output
 
 ### Realisation
 Use unfamiliar language for simple task (initial step, first file): Java and Julia.
