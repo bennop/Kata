@@ -1,7 +1,7 @@
 all:
-  echo default
+	echo default
 
 clean:
-  rm file?.csv
+	rm file?.csv
 
 # END
