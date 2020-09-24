@@ -1,3 +1,5 @@
+#!env julia
+
 # simply copied from
 #
 # https://docs.julialang.org/en/v1/base/io-network/
