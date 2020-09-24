@@ -66,7 +66,7 @@ Initially hard-code the number of lines (see Outlook below for improvement)
 ### Realisation
 Use unfamiliar language for simple task (initial step, first file): `Java` and `Julia`.
 
-`bash` was choden for step 2 and it's initial version relied on its input having exactly one line. (generalized now)
+`bash` was chosen for step 2 as it's initial version relied on its input having exactly one line. (generalized now)
 
 `python` and `R` offered sufficient high-level function support that they were selected for the latter steps.
 
@@ -89,7 +89,7 @@ For fun:
 - Workflow ideas for *Git setup* (all scripts in same directory - needs some kind of UNIX)
     - `makefile` (started)
         - [x] **clean**: remove all output files
-        - [ ] make scripts directly executable
-            - [x] target **executable** to set x-flag
-            - [ ] add exec line at start of script
+        - [x] make scripts **directly executable** (except `java`), i.e., script can be called either, e.g. `python python1.py` or `./python1.py`
+            - [x] `make` target `executable` to set `x`-flag
+            - [x] add exec line at start of script (except `java`)
         
