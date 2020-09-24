@@ -1,13 +1,20 @@
-IN=1
+IN=${1:-1}
 NAME=Arianna
 #------------------
 INFILE=file${IN}.csv
 OUTFILE=file$((${IN}+1)).csv
+
+# Introspection: own lines
+# $0 refers to the command, i.e., the script
 n2=`wc -l $0 | awk '{print $1}'`
 
 if [ -f ${INFILE} ] ; then
+  # using `tee` outputs also to `stdout`
+  # could otherwise be simply copied (via `cp`)
   cat ${INFILE} | tee ${OUTFILE}
-  n1=`awk '{print $NF}' < $INFILE`
+  # parse for lines so far: last field of line, 
+  # added `tail` to keep only last line
+  n1=`awk '{print $NF}' < $INFILE | tail -1`
 else
   echo file ${INFILE} not found
   n1=0
@@ -18,5 +25,6 @@ else
   fi
 fi
 
+# calculate updated line total
 n=$((n1+n2))
 echo "'$NAME', $n2, $n" | tee -a ${OUTFILE}
