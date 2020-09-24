@@ -16,14 +16,26 @@ prot2p1 = read_json_dictionary('peptides.json')
 # common code for
 #  - antisense conversion
 #  - RNA transcription
+
+## pass in partial dictionary for conversion of A and add the common part
+#
 def reverse_and_translate(seq, dict):
   # add common part of dictionary
   dict.update({"C":"G", "G":"C", "T":"A"})
   rev = seq[::-1]
   return ''.join([dict[letter] for letter in rev ])
 
+## alternative implementation, only pass in what A becomes and
+## construct the whole dictionary
+#
+def reverse_and_translate2(seq, a_becomes):
+  # add common part of dictionary
+  dict = {"A":a_becomes, "C":"G", "G":"C", "T":"A"}
+  rev = seq[::-1]
+  return ''.join([dict[letter] for letter in rev ])
+
 def antisense(seq):
-  return reverse_and_translate(seq, {"A":"T"})
+  return reverse_and_translate2(seq, "T")
 
 def transcribe_to_rna(seq):
   return reverse_and_translate(seq, {"A":"U"})
