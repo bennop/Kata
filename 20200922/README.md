@@ -10,8 +10,14 @@ Write scripts to either
     - a team member's name
     - lines of script
     - total lines of scripts (same as `lines of script` since first and only script)
-    `'Nick', 5, 5`
-- take output of preceding script  and output that appended by the previously defined output
+```
+    'Nick', 5, 5
+```
+- take output of preceding script and output that appended by the previously defined output
+```
+    'Nick', 5, 5
+    'Benno', 10, 15
+```
 
 Each script should be in a **different programming language**. 
 
