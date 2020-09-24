@@ -61,5 +61,16 @@ Two strategies for the subsequent relay steps
     - write combined info to output
 
 ### Realisation
-Use unfamiliar language for simple task (initial step, first file): Java and Julia.
+Use unfamiliar language for simple task (initial step, first file): `Java` and `Julia`.
 
+### Extension
+For fun: 
+
+- add flexibility
+    - handle any step (`bash`, `R`)
+        - indicate via parameter
+        - default to original sequence
+    - fault tolerance (`R`)
+        - start over when input file not accessible
+- Workflow ideas for Git setup (all scripts in same directory)
+    - makefile (not yet)
