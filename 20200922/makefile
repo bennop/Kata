@@ -4,7 +4,7 @@ all:
 	echo default
 
 clean:
-	rm file?.csv
+	rm file*.csv
 
 executable:
 	chmod +x $(SCRIPTS)

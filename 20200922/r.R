@@ -1,6 +1,7 @@
+#!/usr/bin/env Rscript --vanilla
 step <- 4
 my.name <- "Benno"
-# this may not work on all systems
+# -----------------------------------
 
 print(commandArgs(TRUE))
 cat('nframe: ', sys.nframe(),'\n')
@@ -9,10 +10,16 @@ for(i in sys.nframe():0){
   print(ls(name = sys.frame(i)))
 }
 
-# Introspection - find lines of this script
-this.file <- sys.frame(1)$ofile
-#this.file <- 'main.r' # hard coded
-# detect number of lines in this script
+## Introspection - find lines of this script
+## 'find' name of script
+## this may not work on all systems
+this.file <- ifelse(sys.nframe() > 0,
+                    sys.frame(1)$ofile,
+                    'r.R')              # hard coded (*)
+## (*) When run with interpreter (#!env Rscript) ofile is not defined ...
+##     it works when run from within R or via `Rscript r.R`
+
+## detect number of lines in this script
 my.lines <- nrow(read.table(this.file, head=FALSE, sep = '@', blank.lines.skip = FALSE))
 
 # helper function
@@ -31,11 +38,14 @@ relay.file <- function(n=3){
   if(file.exists(infile)){
     old <- read.table(infile, header = FALSE, sep=',')
     nl <- nrow(old)
-    new <- rbind(old, as.data.frame(list(V1=my.name, V2=my.lines, V3=my.lines + old[nl,ncol(old)])))
+    new <- rbind(old, as.data.frame(list(V1=my.name,
+                                         V2=my.lines,
+                                         V3=my.lines + old[nl,ncol(old)])))
     # print(new)
     write.table(new, file = next.file(n),            col.names = FALSE,
                 row.names = FALSE,
                 sep = ',')
+    print(new)
   } else {
     warning("input file ", infile, " not found")
   }

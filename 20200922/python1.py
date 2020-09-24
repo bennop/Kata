@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import pandas as pd
 index = 2
 
@@ -14,6 +15,7 @@ old.append = ("Sylvain",
 
 old.to_csv('file3.csv', header = False,index = False)
 
-f = open("file3.csv","a+")
-f.write("'Sylvain', %d, %d\n" % (mylines, old.iloc[1,2]+mylines))
+f = open("file3.csv","a+")     # "a" for append
+# since to_csv does not add spaces after comma, adjust output format here
+f.write("'Sylvain',%d,%d\n" % (mylines, old.iloc[1,2]+mylines))
 f.close()
