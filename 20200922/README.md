@@ -35,9 +35,9 @@ Passing data between scripts could be done via
 - database
     - new `repl.it` feature
 
-Options 1 is not available on `repl.it`, option 3 did not work for `R` as advertised -> files; since **json** may not be easily accessible (bash) -> **csv** which can be handled easily across languages.
+Options `pipe` is not available on `repl.it`, option `database` did not work for `R` as advertised -> files; since **json** may not be easily accessible (bash) -> **csv** which can be handled easily across languages.
 
-Even that option is not (yet?) directly supported on `repl.it` and was implemented via manual copy from one repl to the next.
+Since sharing of files across repls is apparently not supported on `repl.it` and was implemented via *manual copy* from one repl to the next.
 
 #### Language selection
 in alphabetical order
