@@ -65,11 +65,11 @@ Two strategies for the subsequent relay steps
 Initially hard-code the number of lines (see "*introspection*" in Outlook below for improvement)
 
 ### Realisation
-Use unfamiliar language for simple task (initial step, first file): `Java` and `Julia`.
+1. Use least familiar language for simplest task (initial step, first file): `Java` and `Julia`.
 
-`bash` was chosen for step 2 as it's initial version relied on its input having exactly one line. (generalized now)
+2. `bash` was chosen for step 2 as it's initial version relied on its input having exactly one line. (generalized now)
 
-`python` and `R` offered sufficient high-level function support that they were selected for the latter steps.
+3. `python` and `R` offer better high-level function support and, thus, were selected for the latter steps.
 
 ### Extension / Outlook
 For fun: 
