@@ -42,7 +42,7 @@ Since sharing of files across repls is apparently not supported on `repl.it` and
 #### Language selection
 in alphabetical order
 - [`bash`](https://www.gnu.org/software/bash
-    - -> [shell tools](https://www.johndcook.com/blog/2019/08/30/cut-sort-awk/)
+    - see post on [useful shell tools](https://www.johndcook.com/blog/2019/08/30/cut-sort-awk/)
 - [`Java`](https://www.java.com/)
 - [`Julia`](https://julialang.org/) (after Google hit)
 - [`Python`](https://www.python.org/)
@@ -62,7 +62,7 @@ Two strategies for the subsequent relay steps
     - write combined info to output
     
 #### Line Count
-Initially hard-code the number of lines (see Outlook below for improvement)
+Initially hard-code the number of lines (see "*introspection*" in Outlook below for improvement)
 
 ### Realisation
 Use unfamiliar language for simple task (initial step, first file): `Java` and `Julia`.
@@ -74,20 +74,20 @@ Use unfamiliar language for simple task (initial step, first file): `Java` and `
 ### Extension / Outlook
 For fun: 
 
-- add flexibility
+- add **flexibility**
     - handle any step (`bash`, `R`)
         - indicate via parameter (or automatically continue on highest output found?)
         - default to original sequence
     - fault tolerance (`R`)
         - start over when input file not accessible
-- add introspection (detect line count for current script) where feasible
+- add **introspection** (detect line count for current script) where feasible
     - No(t yet)
         - `Java`, `Julia`
     - Partly
         - `R`
     - done
         - `bash`, `python`
-- Workflow ideas for *Git setup* (all scripts in same directory - needs some kind of UNIX)
+- **Workflow** ideas for *Git setup* (all scripts in same directory - needs some kind of UNIX)
     - `makefile` (started)
         - [x] **clean**: remove all output files
         - [x] make scripts **directly executable** (except `java`), i.e., script can be called either, e.g. `python python1.py` or `./python1.py`
