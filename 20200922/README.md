@@ -1,7 +1,7 @@
 # Data Relay
 2020-09-22
 
-Ariana, Benno, Danka, Sylvain
+Arianna, Benno, Danka, Sylvain
 
 ## Relay Task
 Write scripts to either
