@@ -41,7 +41,7 @@ Since sharing of files across repls is apparently not supported on `repl.it` and
 
 #### Language selection
 in alphabetical order
-- [`bash`](https://www.gnu.org/software/bash
+- [`bash`](https://www.gnu.org/software/bash)
     - see post on [useful shell tools](https://www.johndcook.com/blog/2019/08/30/cut-sort-awk/)
 - [`Java`](https://www.java.com/)
 - [`Julia`](https://julialang.org/) (after Google hit)
